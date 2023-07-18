@@ -3,7 +3,6 @@ from tkinter import ttk
 
 # Create a Progress Bar that get deactivated and reactivated everytime we push the button download
 
-
 # Variables du téléchargement
 total_downloads = 5
 current_download = 0
@@ -18,6 +17,7 @@ def simulate_download():
     start_button.configure(state="disabled")  # Désactiver le bouton de téléchargement
     progressbar.pack()
     percentage_label.pack()
+    download_label.pack()
 
     def perform_download():
         global current_download
@@ -39,6 +39,7 @@ def simulate_download():
 
             # Supprimer le résumé après 2 secondes
             root.after(2000, lambda: summary_label.pack_forget())
+            root.after(2000, lambda: download_label.pack_forget())
 
             start_button.configure(state="normal")  # Réactiver le bouton de téléchargement
 
