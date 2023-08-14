@@ -2,6 +2,9 @@ import tkinter as tk
 from tkinter import ttk
 
 # Create a Progress Bar that get deactivated and reactivated everytime we push the button download
+# Définir la couleur de fond de la barre de progression
+style = ttk.Style()
+style.configure("Custom.TProgressbar", background="white")  
 
 # Variables du téléchargement
 total_downloads = 5
@@ -50,7 +53,7 @@ def simulate_download():
 root = tk.Tk()
 
 # Création de la barre de progression
-progressbar = ttk.Progressbar(root, mode="determinate")
+progressbar = ttk.Progressbar(root, mode="determinate", style="Custom.TProgressbar")
 
 # Création du label pour afficher le pourcentage
 percentage_label = tk.Label(root, text="0%")
